@@ -1,0 +1,45 @@
+%!TEX root = ../dokumentation.tex
+
+\chapter{Einleitung}
+In unserer heutigen Welt gibt es einen stetigen Anstieg der weltweiten Bevölkerung. Parallel zu diesem, steigt auch die Anzahl der Kraftfahrzeuge.
+Wegen stetiger Zunahme der Verkehrsteilnehmer und der Häufigkeit von Fahrten besteht eine höher werdende Wahrscheinlichkeit einen Unfall auf dem Weg von Startpunkt A nach Zielpunkt B zu haben. Unfallfreies bewegen mit dem Kraftfahrzeug fordert die volle Konzentration des Fahrzeugführers für den Straßenverkehr. Jede Ablenkung vom Straßenverkehr führt zu einem ansteigen des Unfallrisikos.
+Laut Statistik sind mehr als 33 Prozent der Unfälle auf Ablenkungen zurückzuführen.
+Dabei nehmen Smartphones einen immer größer werdenden Teil in dieser Statistik ein, insbesondere bei Fahrern zwischen 18 und 24. Ablenkung durch Smartphones können beispielsweise durch eine eingehende Benachrichtigungen, beantworten von Telefongesprächen ohne Freisprecheinrichtung oder durch manuelle Bedienung verursacht werden.\footcite[vgl.:][]{heiseAblenkungSmartphone}
+
+Ziel dieser Arbeit ist es, die Ablenkungen im Straßenverkehr, die durch die Interaktion mit dem Smartphone entstehen, auf ein Minimum zu reduzieren und somit das Unfallrisiko durch Ablenkungen zu senken. Dies soll durch die Verwendung einer Applikation namens \ac{ANNA} umgesetzt werden. Die Idee ist, die Interaktion mit dem Smarthpone durch Berührungen komplett auf Sprachsteuerung umzustellen und abzulösen. Wegen dem wegfallen der manuellen Bedienung kann sich der Fahrer besser auf den Straßenverkehr konzentrieren. Durch diese Umverteilung des Fokus wird Fahrern eine Applikation geboten, die es ihnen ermöglicht, auch während der Fahrt mit anderen Personen zu kommunizieren, ohne das eigene Unfall Risiko drastisch zu erhöhen.
+
+\section{Motivation}
+Das Projekt \ac{ANNA} basiert auf der Idee einen Fahrassistenten, wie er bereits in zahlreichen Oberklasse Fahrzeugen enthalten ist, für jeden zugänglich zu machen. Ziel dieses Assistenten ist es, die manuelle Interaktion mit einem Smartphone zu vermeiden. Die Erwartung ist, den Anteil der Verkehrsunfälle, die auf Ablenkungen durch das Smartphone zurückzuführen sind, zu minimieren.
+
+Gerade jüngere Menschen sind von einer Ablenkung stärker betroffen. Das Smartphone nimmt einen wichtigeren Teil ihres Lebens ein, als es bei älteren Menschen der Fall ist. Außerdem sind jüngere Menschen noch nicht so erfahren im Straßenverkehr, woraus ohnehin ein höheres Unfallrisiko entsteht.
+Oberklasse Fahrzeuge zielen mit ihren Assistenten eigentlich auf die falsche Nutzergruppe ab. Ältere Menschen, welche sich ein Oberklasse Auto leisten können, nutzen ihr Smartphone meist nicht so häufig wie jüngere Menschen. Außerdem haben sie mehr Erfahrungen im Straßenverkehr wodurch insgesamt das Unfallrisiko niedriger ist.\\
+Das Projekt \ac{ANNA} zielt eher auf jüngere Nutzer ab, welche einen Fahrassistenten wirklich brauchen, um so die Anzahl der Unfälle durch Ablenkung von Smartphones zu minimieren.
+
+Die starke Einschränkung, der in Oberklasse Fahrzeugen verbauten Systeme, ist ein ausschlaggebender Punkt für die Entwicklungsidee von \ac{ANNA}.\\
+Die Interaktion dieser Systeme ist meist auf Basisfunktionen, wie z.B. Telefonanrufe, SMS und Navigation beschränkt.\\
+Durch einen Fahrassistent der hingegen direkt auf dem Smartphone arbeitet und nicht nur über Bluetooth mit dem Smartphone verbunden ist, bieten sich viel weitreichendere Möglichkeiten zur Interaktion mit anderen Funktionen. So können beispielsweise verschiedene Messenger verwendet werden anstatt nur SMS oder auch mit der favorisierten Musikplayer App interagiert werden.
+
+\section{Problemstellung}
+Ein wichtiger Aspekt bei der Entwicklung von \ac{ANNA} ist die Modularität. Die App soll keine Funktionen beinhalten, die der jeweilige Nutzer nicht nutzt. Daher werden beim initialen Start der App alle installierten Apps auf dem Smartphone gescannt, um schließlich dem Nutzer nur die für ihn relevanten Module anzuzeigen. Der Nutzer kann anschließend selbst entscheiden, welche Funktionalitäten er in seinen Fahrassistent aufnehmen will.
+
+Ein weiterer wichtiger Punkt ist die Interaktion mit anderen Anwendungen. Nicht alle Anwendungen bieten eine \ac{API} an, um über diese mit der jeweiligen Anwendung zu interagieren. Vor allem Messenger Dienste wie z.B. WhatsApp sehen keine Interaktion durch dritte mit ihrem Dienst vor. Um diese Problematik zu lösen, müssen die einzelnen Anwendungen und ihr Funktionsweisen analysiert werden, um aus diesen Funktionsweisen Schlüsse, zur Implementierung von Interaktionen auf reiner Geräteebene, zu ziehen.
+
+In Hinblick auf die Interaktion im Fahrzeug, ergibt sich bei der Spracherkennungsfunktion folgendes Problem: Zwischen dem Nutzer und dem Mikrofon zur Erkennung des gesprochenen Worts liegt in der Regel eine mittlere Distanz, da das Smartphone meist in einer Halterung nahe der Windschutzscheibe platziert wird. Außerdem entstehen durch die Geräuschkulisse  des Straßenverkehrs Störgeräusche, welche die Sprachanalyse erschweren.\\
+Um dem Problem entgegenzuwirken, muss eine gewisse Fehlertoleranz bei der Analyse des gesprochenen Wortes berücksichtigt werden.\\
+Zur Gewinnung weiterer Erkenntnisse, in Hinblick auf das verwendete Mikrofon, werden im weiteren Verlauf dieser Arbeit entsprechende Untersuchungen durchgeführt.
+
+\section{Anforderungen}
+\label{sec:requirements}
+Bei der Projektidee, einen Oberklasse Fahrassistenten für jeden verfügbar zu machen, dient das mobile Betriebssystem Android als Basis. Durch die Wahl von Android als Basisbetriebssystems, ist es möglich 87,5\% der weltweiten Smartphonenutzer zu erreichen.\footcite[vgl.:][]{t3n}  
+
+Um Nutzern mit einer älteren Androidversion von der Verwendung von \ac{ANNA} nicht auszuschließen, wird Kitkat 4.4 als älteste Version des Betriebssystems unterstützt. Somit werden 86,7\% (Stand: Februar 2017) der Androidnutzer erreicht.\footcite[vgl.:][]{androidDistribution}
+
+Um das Ziel zu verwirklichen, den Straßenverkehr sicherer zu gestalten, wird die App kostenlos zur Verfügung gestellt, um somit keine potentiellen Nutzer durch eine Kaufgebühr abzuschrecken. Ein weiter Punkt um dieses Ziel umzusetzen besteht darin, die aktive Interaktion mit der Smartphone durch Berührungseingaben und aktives Lesen zu vermeiden. Hierzu werden eingehende Benachrichtigungen vorgelesen und der Nutzer kann mit dem System durch reine Sprachbefehle interagieren.
+
+Der Nutzer mit seinen Bedürfnissen steht bei der Entwicklung von \ac{ANNA} im Vordergrund. Die Privatsphäre des Nutzers geschützt, indem Audioaufnahmen zur weiteren Verarbeitung nicht an für den Nutzer unzugängliche Server geschickt werden, sondern direkt auf dem Endgerät verarbeitet werden. Dies schützt nicht nur die Privatsphäre, sondern spart auch Datenvolumen des Nutzers.
+Die von \ac{ANNA} vorgelesenen Benachrichtigungen werden nicht gespeichert oder für andere Zwecke als der Interaktion mit dem Nutzer der App verwendet.
+
+Neben der Privatsphäre der Nutzer steht ebenso die Individualität der Nutzer im Vordergrund. Da unterschiedliche Nutzergruppen unterschiedliche Applikationen wie z.B. verschiedene Messenger-, Karten- oder Musikdienste nutzen, sollte auch ihr Fahrassistent individuell konfigurierbar sein. Zu diesem Zweck kann der Nutzer aus einer Liste verschiedene Module für seinen Fahrassistenten auswählen.
+
+Ein weiterer Schwerpunkt bei der Entwicklung von \ac{ANNA} liegt im Design der Benutzeroberfläche. Hierzu orientiert sich das Aussehen an dem von Google definierten Material-Design, welches in den aktuellen Versionen des Betriebssystems Android Einzug hält und das vorhergehende Holo-Design ablöst.
+

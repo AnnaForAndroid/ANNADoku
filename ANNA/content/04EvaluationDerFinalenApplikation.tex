@@ -1,0 +1,27 @@
+\chapter{Evaluation der finalen Applikation}
+
+In diesem Kapitel wird die Dashboard Applikation anhand zahlreicher verschiedener Kriterien Evaluiert. Der Großteil dieser Kriterien wurde zuvor in der Sektion \ref{sec:requirements} vereinbart. Dazu zählen Offline Verfügbarkeit, Modularität, Hotword Detection, Qualität der Spracherkennung und Ausgabe, Navigation, Anrufen, SMS, Messenger Integration, Musik Dienste, Nachtmodus, die Bedienung des Geräts ausschließlich über Sprache und ein übersichtliches Design.
+
+Die Offline Verfügbarkeit der Applikation wird durch die Verwendung der Speech \ac{API} \ac{CMU} erreicht, welches durch die Verwendung von selbst definierten Grammatiken einen Performance Steigerung bietet. Zusätzlich wird durch die Kontext Spezifizierung eine Erhöhung der Sprachqualiät und durch Verwendung von \ac{VA} eine gute Sprachausgabe erreicht. Jedoch wird eine Nachjustierung der Parameter notwendig werden, da sich der Kontext mit jeder externen Applikation vergrößert und eine Erkennungsrate von mindestens 90 Prozent wie in Kapitel \ref{chpt:Mic} beibehalten werden soll.  
+
+Das Konzept der Modularität der Applikation zieht sich die komplette Applikation. Dies fängt breits beim ersten Starten der App an, in dem sich der Nutzer \ac{ANNA} personalisieren kann. Weiterhin kann der Benutzer unabhängig von seiner bisherigen Auswahl an Modulen diese jederzeit in den Einstellungen ändern und an seine Bedürfnisse anpassen. Das Ergebnis dieser Modularität kann in Grafik \ref{figANNAStatusbar} betrachtet werden, wobei einmal alle zur Verfügung stehenden Funktionen ausgewählt wurden und einmal nur die vom Nutzer benötigten. 
+
+\begin{figure}[h]
+	\centering
+  \includegraphics[scale=0.5]{images/status_bars.png}
+	\caption{Nutzer ausgewählte Module für \ac{ANNA}}
+	\label{figANNAStatusbar}
+\end{figure}
+
+Das Kriterium der ausschließlichen Bedienung über Sprache wird mit Hilfe der Hotword Detection gelöst, wodurch \ac{ANNA} stehts über das Hotword ,,Hey ANNA'' aktiviert werden kann und somit auf die Eingaben des Nutzers hört. Dadurch können wie im Laufe der Arbeit beschrieben Kontakte angerufen, Navigationsziele festgesetzt, zwischen den Views gewechselt, auf Nachrichten reagiert und Musiktitel, welche sich lokal auf dem Smartphone befinden, abgespielt werden.
+
+Für die Navigation des Nutzers, unabhängig von seinem Standort, wird das Open Source SDK Here Maps verwendet, welches sich durch seine vollständige Konfigurierbarkeit in das Konzept der Applikation perfekt integrieren lies. Here Maps bietet aufgrund umfassender Karten und Datenbank Anbindungen viele Optionen zur Verbesserung des Fahrempfindens an, wie beispielsweise Stauumfahrung und Geschwindigkeitsanzagen.
+
+Weiterhin kann der Nutzer während einer Fahrt durch einen Sprachbefehl Personen aus seiner Kontaktliste anrufen, damit die Aufmerksamkeit durchgehend auf die Straße gerichtet und nicht durch das Heraussuchen eines Kontaktes vermindert wird.
+
+Zur Entgegenwirkung der größten Ablenkung, eingehende Nachrichten jeglicher Messenger, unterstüzt \ac{ANNA} eine Vielzahl von aktuellen Nachrichtendiensten. Zu diesen zählen unter anderem Whats App, Signal, Hangouts, Wire, Allo und weitere. Außerdem werden auch altmodische Nachrichten Dienste wie SMS unterstützt. Durch die Annahme und Beantwortung per Sprache kann somit eine deutlich erhöhte Fokusssierung auf den Straßenverkehr erreicht werden. Allerdings wird der Dialog mit \ac{ANNA} bei eingehenden Nachrichten durch laute Umgebungsgeräusche erheblich erschwert, wenn eine gewissen Grenze überschritten wird, welche nach verschiedenen Tests bei knapp 90 Dezibel liegt. 
+
+Damit auch die Musikauswahl während der Fahrt nicht weiter ablenkt, wurde der Android Musicplayer integriert. So kann der Nutzer Wunschlieder äußern und bei nicht gefallen eines Liedes zum nächsten oder zum vorherigen springen. Vorraussetzung dafür ist jedoch das vorliegen der Musik auf dem Smartphone, da weitere Musikdienste nicht eingebunden sind. 
+
+Zur angenehmen Bedienung der Applikation wurde auf ein übersichtliches und schlichtes Design gesetzt, um dazu beizutragen den Benutzer während der Fahrt nicht abzulenken. Des weiteren wird durch die Verwendung eines speziellen Nachtmodus auch bei Nachtfahrten ein angenehmes Empfinden der Helligkeit im Fahrzeug erreicht. Dies wird durch das Wechseln der Farben von hell zu dunkel erreicht, welches durch die automatische Anpassung der Bildschirmhelligkeit durch das Betriebssystem zusätzlich verbessert werden kann.  
+
