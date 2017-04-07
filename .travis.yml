@@ -7,7 +7,9 @@ before_install:
   - chmod +x ./upload.sh
 
 script:
-  - docker run -it -v `pwd`:/mnt/src beevelop/latex ./ANNA/dokumentation
+  - cd ./ANNA
+  - docker run -it -v `pwd`:/mnt/src beevelop/latex dokumentation
 
 after_success:
+  - cd ..
   - ./upload.sh
