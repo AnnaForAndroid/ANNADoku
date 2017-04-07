@@ -10,6 +10,6 @@ script:
   - cd ./ANNA
   - docker run -it -v `pwd`:/mnt/src beevelop/latex dokumentation
 
-after_success:
+after_script:
   - cd ..
   - ./upload.sh
